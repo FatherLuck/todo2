@@ -20,11 +20,12 @@ export default function TodoList(props) {
     { id: 2, completed: false, title: 'Посадить дерево' },
     { id: 3, completed: false, title: 'Вырастить сына' },
   ]);
+
   return (
     <ul style={styles.ul}>
       <TodoAdd todos={todos} setTodos={setTodos} />
       {todos.map((todo) => {
-        return <TodoItem todo={todo} />;
+        return <TodoItem todo={todo} todos={todos} setTodos={setTodos} />;
       })}
       {/* <TodoItem text="3" /> */}
     </ul>
